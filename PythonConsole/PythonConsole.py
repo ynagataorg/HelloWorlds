@@ -3,9 +3,9 @@ from datetime import datetime
 
 def fact(n):
     if not(isinstance(n, int)):
-        raise ValueError("fact ‚Ìˆø”‚É‚Í 0 ˆÈã‚Ì®”‚ğ“n‚µ‚Ä‚­‚¾‚³‚¢B")
+        raise ValueError("fact ã«ã¯å¼•æ•°ã¨ã—ã¦ 0 ä»¥ä¸Šã®æ•´æ•°ã‚’ä¸ãˆã¦ãã ã•ã„ã€‚")
     if (n < 0):
-        raise ValueError("fact ‚Ìˆø”‚É‚Í 0 ˆÈã‚Ì®”‚ğ“n‚µ‚Ä‚­‚¾‚³‚¢B")
+        raise ValueError("fact ã«ã¯å¼•æ•°ã¨ã—ã¦ 0 ä»¥ä¸Šã®æ•´æ•°ã‚’ä¸ãˆã¦ãã ã•ã„ã€‚")
     if (n == 0):
         return 1
     else:
