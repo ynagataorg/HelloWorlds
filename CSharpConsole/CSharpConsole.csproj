@@ -7,8 +7,8 @@
     <ProjectGuid>{DA152DA1-65E9-40D9-B3BF-3FF4B9E5CFDB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication1</RootNamespace>
-    <AssemblyName>ConsoleApplication1</AssemblyName>
+    <RootNamespace>CSharpConsole</RootNamespace>
+    <AssemblyName>CSharpConsole</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -22,6 +22,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +50,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DesignTimeTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="HelloWorldBase.cs" />
+    <Compile Include="HelloWorldWithAggregate.cs" />
+    <Compile Include="HelloWorldWithRecursive.cs" />
+    <Compile Include="IHelloWorld.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
