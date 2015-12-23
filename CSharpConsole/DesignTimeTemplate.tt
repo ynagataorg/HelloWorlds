@@ -1,0 +1,46 @@
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ output encoding="UTF-8" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#var classNames = new[] { "DesignTimeGeneratedClassA", "DesignTimeGeneratedClassB", "DesignTimeGeneratedClassC" }; #>
+using System;
+using System.Linq;
+
+namespace CSharpConsole
+{
+<# foreach (var className in classNames)
+{ #>
+
+	/// <summary>
+	/// デザイン時コード生成を試してみます。
+	/// </summary>
+	/// <remarks>
+	/// [T4 テキスト テンプレートを使用したデザイン時コード生成](https://msdn.microsoft.com/ja-jp/library/dd820620.aspx)
+	/// </remarks>
+	public partial class <#= className #>
+	{
+		internal static void Run(string[] args)
+		{
+			Console.WriteLine("Hello, World! @ {0}", DateTime.Now);
+			Console.WriteLine("5! == {0}", <#= className #>.Factorial(5));
+			Console.WriteLine("10! == {0}", <#= className #>.Factorial2(10));
+		}
+
+		private static uint Factorial(uint n)
+		{
+			return n == 0 ? 1 : n * <#= className #>.Factorial(n - 1);
+		}
+
+		private static uint Factorial2(uint n)
+		{
+			return n > int.MaxValue 
+				? uint.MaxValue
+				: (uint)Enumerable.Range(1, (int)n).Aggregate((a, b) => a * b);
+		}
+	}
+<#
+	}
+#>
+}

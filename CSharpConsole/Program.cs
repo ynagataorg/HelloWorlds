@@ -7,6 +7,14 @@ namespace CSharpConsole
     {
         static void Main(string[] args)
         {
+            Program.Run(args);
+            DesignTimeGeneratedClassA.Run(args);
+            DesignTimeGeneratedClassB.Run(args);
+            DesignTimeGeneratedClassC.Run(args);
+        }
+
+        internal static void Run(string[] args)
+        {
             Console.WriteLine("Hello, World! @ {0}", DateTime.Now);
             Console.WriteLine("5! == {0}", Program.Factorial(5));
             Console.WriteLine("10! == {0}", Program.Factorial2(10));
