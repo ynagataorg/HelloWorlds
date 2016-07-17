@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CSharpConsole
 {
@@ -8,22 +9,32 @@ namespace CSharpConsole
 
         public void Hello(string[] args)
         {
-            Console.WriteLine("[from {0}]", this.GetType().FullName);
-            Console.WriteLine("Hello, World! @ {0}", DateTime.Now);
+            Console.WriteLine($"[from {this.GetType().FullName}]");
+            Console.WriteLine($"Hello, World! @ {DateTime.Now}");
 
             if (args == null)
             {
                 return;
             }
 
-            foreach (var arg in args)
+            foreach (var arg in args.ToInt())
             {
-                int parsed;
-                if (int.TryParse(arg, out parsed))
-                {
-                    Console.WriteLine("{0}! == {1}", parsed, this.Factorial(parsed));
-                }
+                Console.WriteLine($"{arg}! == {this.Factorial(arg)}");
             }
         }
     }
+
+    internal static class Extensions
+    {
+        internal static IEnumerable<int> ToInt(this IEnumerable<string> source)
+        {
+            foreach (var s in source)
+            {
+                int num;
+                var result = int.TryParse(s, out num);
+                yield return result ? num : 0;
+            }
+        }
+    }
+
 }
