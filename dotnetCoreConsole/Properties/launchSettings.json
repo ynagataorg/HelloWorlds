@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "dotnetCoreConsole": {
+      "commandName": "Project",
+      "commandLineArgs": "3 5 10"
+    }
+  }
+}
